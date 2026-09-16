@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Directional and tunable end-effector and root compliance for humanoid loco-manipulation. Independent Cartesian stiffness control and switchable root compliance through a shared interface.">
+  <meta name="keywords" content="Humanoid, Compliance, Hierarchical Control, Loco-Manipulation, Robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Directional and Tunable End-Effector and Root Compliance for Humanoid Loco-Manipulation">
+  <meta property="og:description" content="Directional EE compliance, online stiffness adjustment, and concurrent EE–root compliance for humanoid physical interaction.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ee-root-compliance.github.io/static/images/ceer2-overview.png">
+  <title>Directional and Tunable End-Effector and Root Compliance for Humanoid Loco-Manipulation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans&amp;display=swap">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ceer2-favicon.svg" type="image/svg+xml">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="navbar project-nav" aria-label="Main navigation">
+    <a class="navbar-item" href="./" aria-label="Project home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+    </a>
+  </nav>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="accent">Directional and Tunable</span> End-Effector and Root Compliance for Humanoid Loco-Manipulation</h1>
+          <div class="is-size-5 publication-authors author-row">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+          <div class="publication-links">
+            <a href="./static/papers/CEER2.pdf" class="button is-normal is-rounded is-dark">
+              <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></span>
+              <span>Paper</span>
+            </a>
+            <a id="video-link" href="#video" class="button is-normal is-rounded is-dark" hidden>
+              <span class="icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 4v16l12-8Z"/></svg></span><span>Video</span>
+            </a>
+            <button class="button is-normal is-rounded is-dark code-pending" type="button" disabled>
+              <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span>
+              <span>Code · Coming soon</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero teaser">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <figure>
+            <img class="paper-figure" src="./static/images/ceer2-overview.png" width="1513" height="880" alt="Humanoid demonstrations: directional hand and root compliance for carrying, adjustable vertical stiffness while dragging a payload, and compliant writing compared with a stiff setting that breaks the tool.">
+            <figcaption class="teaser-caption">Directional and tunable end-effector compliance, together with switchable root compliance, enables versatile humanoid physical interaction.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section abstract-section" aria-labelledby="abstract-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 id="abstract-title" class="title is-3 has-text-centered">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>General humanoid motion-tracking policies reproduce diverse behaviors but do not specify responses to physical interaction. Existing compliance methods mainly target selected links or end effectors, without jointly controlling axis-wise stiffness and locomotion behavior. We formulate directional and tunable end-effector (EE) compliance together with root resistance and damping modes. Our two-level hierarchical RL controller combines a stiff low-level whole-body tracking policy with high-level residual policies that modify its shared EE–root command interface. An analytical compliance-space mixture-of-experts (MoE) composes 10 experts, enabling independent, continuous stiffness commands along each Cartesian axis over 100–600 N/m. A root-mode command selects one root resistance policy or one of two root damping policies. Using privileged forces, a teacher–student pipeline jointly trains the high-level policies and a force estimator, enabling deployment without wrist force/torque sensors. Simulation evaluations show accurate full-range directional EE compliance, workspace consistency, and distinct root modes. Real-world tasks further demonstrate directional EE compliance, online adjustment of EE stiffness, and concurrent EE–root compliance through the shared interface.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="video" class="section" aria-labelledby="video-title" hidden>
+      <div class="container is-max-desktop">
+        <h2 id="video-title" class="title is-3 has-text-centered">Video</h2>
+        <div id="video-player" class="publication-video"></div>
+        <p class="video-fallback has-text-centered"><a id="video-external" target="_blank" rel="noopener noreferrer">Watch on Google Drive</a></p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="framework-title">
+      <div class="container is-max-desktop">
+        <h2 id="framework-title" class="title is-3 has-text-centered">System Framework</h2>
+        <figure>
+          <img class="paper-figure" src="./static/images/ceer2-framework.png" width="1483" height="702" loading="lazy" alt="Two-stage hierarchical RL framework: a stiff low-level tracking policy, high-level compliance residual policies, an analytical mixture-of-experts gate for end-effector stiffness, and a root-mode switch.">
+          <figcaption class="content framework-caption">A stiff low-level whole-body tracking policy provides a shared EE–root command interface. High-level residual policies learn responses to external forces. At deployment, an analytical compliance-space gate composes 10 EE compliance experts according to the commanded Cartesian stiffness, while a mode switch selects a root resistance or damping policy. The low-level policy remains active throughout.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container is-max-desktop has-text-centered">
+      <p>Website adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project page template</a>, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body { font-family: 'Noto Sans', Arial, sans-serif; color: #363636; }
+[hidden] { display: none !important; }
+.project-nav { display: flex; justify-content: center; min-height: 3.25rem; }
+.project-nav .navbar-item { display: flex; }
+.publication-title, .publication-authors, .teaser { font-family: 'Google Sans', 'Noto Sans', Arial, sans-serif; }
+.publication-title { line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1.6rem !important; }
+.accent { color: #d62728; }
+.hero-body { padding: 2rem 1.5rem 2.5rem; }
+.author-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25em 0.4em; }
+.author-block { display: inline-block; }
+.publication-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
+.publication-links .icon svg { width: 18px; height: 18px; }
+.button.is-dark.code-pending[disabled] { opacity: 1; color: #636363; background: #ededed; border-color: #ededed; }
+.teaser .hero-body { padding-top: 0; padding-bottom: 2rem; }
+.paper-figure { display: block; width: 100%; height: auto; margin: 0 auto; }
+.teaser-caption { max-width: 850px; margin: 1.25rem auto 0; text-align: center; font-size: 1.2rem; line-height: 1.55; }
+.section { padding: 3rem 1.5rem; }
+.abstract-section { background: #f5f5f5; }
+.content { line-height: 1.8; }
+.framework-caption { margin-top: 1.5rem; }
+.publication-video { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; background: #f5f5f5; }
+.publication-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-fallback { margin-top: 0.85rem; }
+.footer { padding: 2rem 1.5rem; font-size: 0.85rem; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; padding: 0.6rem 1rem; background: white; z-index: 10; }
+.skip-link:focus { top: 1rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid #3273dc; outline-offset: 4px; }
+@media screen and (max-width: 768px) {
+  .publication-title.title.is-1 { font-size: 2rem; }
+  .publication-authors.is-size-5 { font-size: 1.05rem !important; }
+  .hero-body { padding: 1rem 1.25rem 2rem; }
+  .teaser-caption { font-size: 1.05rem; }
+  .section { padding: 2.25rem 1.25rem; }
+  .content.has-text-justified { text-align: left !important; }
+}
