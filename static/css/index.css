@@ -11,6 +11,7 @@ body { font-family: 'Noto Sans', Arial, sans-serif; color: #363636; }
 .publication-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
 .publication-links .icon svg { width: 18px; height: 18px; }
 .button.is-dark.code-pending[disabled] { opacity: 1; color: #636363; background: #ededed; border-color: #ededed; }
+.resource-pending { opacity: 0.58; cursor: not-allowed; }
 .teaser .hero-body { padding-top: 0; padding-bottom: 2rem; }
 .paper-figure { display: block; width: 100%; height: auto; margin: 0 auto; }
 .teaser-caption { max-width: 850px; margin: 1.25rem auto 0; text-align: center; font-size: 1.2rem; line-height: 1.55; }
