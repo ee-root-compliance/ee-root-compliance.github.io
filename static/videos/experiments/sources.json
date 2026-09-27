@@ -1,0 +1,64 @@
+[
+  {
+    "name": "battery-600",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 0.133333,
+    "duration": 3.9,
+    "crop": "crop=628:900:6:180",
+    "hdr": false
+  },
+  {
+    "name": "battery-200",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 0.133333,
+    "duration": 3.9,
+    "crop": "crop=628:900:646:180",
+    "hdr": false
+  },
+  {
+    "name": "battery-100",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 0.133333,
+    "duration": 3.9,
+    "crop": "crop=628:900:1286:180",
+    "hdr": false
+  },
+  {
+    "name": "writing-soft",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 59.5,
+    "duration": 11.8,
+    "crop": "crop=616:810:16:188",
+    "hdr": false
+  },
+  {
+    "name": "writing-stiff",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 59.5,
+    "duration": 11.8,
+    "crop": "crop=616:810:652:188",
+    "hdr": false
+  },
+  {
+    "name": "writing-directional",
+    "source": "website/static/videos/ceer2-project.mp4",
+    "start": 59.5,
+    "duration": 11.8,
+    "crop": "crop=616:810:1288:188",
+    "hdr": false
+  },
+  {
+    "name": "carrying",
+    "source": "video-source/longbox_nopayload.MOV",
+    "start": 0.5,
+    "duration": 18.5,
+    "hdr": true
+  },
+  {
+    "name": "carrying-payload",
+    "source": "video-source/longbox_payload1.MOV",
+    "start": 0.5,
+    "duration": 21,
+    "hdr": true
+  }
+]

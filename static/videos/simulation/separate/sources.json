@@ -1,0 +1,102 @@
+[
+  {
+    "name": "table-wiping-full-stiff",
+    "task": "Table Wiping",
+    "condition": "stiff",
+    "source": "video-source/editable-simulation/v2fill_table_wipe__S-STIFF_verystiff.mp4",
+    "crop": null,
+    "width": 960,
+    "height": 540,
+    "duration": 16.36
+  },
+  {
+    "name": "table-wiping-full-directional",
+    "task": "Table Wiping",
+    "condition": "directional",
+    "source": "video-source/editable-simulation/v2fill_table_wipe__S-SOFT_my_custom.mp4",
+    "crop": null,
+    "width": 960,
+    "height": 540,
+    "duration": 16.36
+  },
+  {
+    "name": "peg-insertion-full-stiff",
+    "task": "Peg Insertion",
+    "condition": "stiff",
+    "source": "video-source/editable-simulation/v2fill_peg_in_hole__S-STIFF_verystiff.mp4",
+    "crop": null,
+    "width": 960,
+    "height": 540,
+    "duration": 23.84
+  },
+  {
+    "name": "peg-insertion-full-directional",
+    "task": "Peg Insertion",
+    "condition": "directional",
+    "source": "video-source/editable-simulation/v2fill_peg_in_hole__S-SOFT_my_custom.mp4",
+    "crop": null,
+    "width": 960,
+    "height": 540,
+    "duration": 7.64
+  },
+  {
+    "name": "figure-eight-writing-stiff",
+    "task": "Figure-eight Writing",
+    "condition": "stiff",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "836:470:230:36",
+    "width": 960,
+    "height": 540,
+    "duration": 9.5
+  },
+  {
+    "name": "figure-eight-writing-directional",
+    "task": "Figure-eight Writing",
+    "condition": "directional",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "836:470:230:510",
+    "width": 960,
+    "height": 540,
+    "duration": 9.5
+  },
+  {
+    "name": "box-lifting-stiff",
+    "task": "Box Lifting",
+    "condition": "stiff",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "836:470:1070:36",
+    "width": 960,
+    "height": 540,
+    "duration": 9.5
+  },
+  {
+    "name": "box-lifting-directional",
+    "task": "Box Lifting",
+    "condition": "directional",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "836:470:1070:510",
+    "width": 960,
+    "height": 540,
+    "duration": 9.5
+  },
+  {
+    "name": "collaborative-carrying-pair-soft",
+    "task": "Collaborative Carrying",
+    "condition": "soft",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "1176:490:452:20",
+    "width": 960,
+    "height": 400,
+    "duration": 12.0
+  },
+  {
+    "name": "collaborative-carrying-pair-directional",
+    "task": "Collaborative Carrying",
+    "condition": "directional",
+    "source": "video-source/CEER2V5.mov",
+    "crop": "1176:490:452:516",
+    "width": 960,
+    "height": 400,
+    "duration": 12.0
+  }
+]

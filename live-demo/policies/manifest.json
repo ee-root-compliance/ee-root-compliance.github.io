@@ -1,0 +1,123 @@
+{
+  "low": {
+    "file": "low.onnx",
+    "inputDim": 257,
+    "outputDim": 29,
+    "source": "assets/models/g1/my_custom/policy_verystiff.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "baseline_600": {
+    "file": "baseline_600.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_baseline_600.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "x_400": {
+    "file": "x_400.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_x_400.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "x_200": {
+    "file": "x_200.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_x_200.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "y_400": {
+    "file": "y_400.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_y_400.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "y_200": {
+    "file": "y_200.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_y_200.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "z_400": {
+    "file": "z_400.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_z_400.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "z_200": {
+    "file": "z_200.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/moe/high_policy_z_200.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.15
+    ]
+  },
+  "x_100": {
+    "file": "x_100.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/my_custom/high_policy_100x_20260826.pt",
+    "scale": [
+      0.35,
+      0.15,
+      0.15
+    ]
+  },
+  "y_100": {
+    "file": "y_100.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/my_custom/high_policy_100y_20260826.pt",
+    "scale": [
+      0.15,
+      0.35,
+      0.15
+    ]
+  },
+  "z_100": {
+    "file": "z_100.onnx",
+    "inputDim": 311,
+    "outputDim": 6,
+    "source": "assets/models/g1/my_custom/high_policy_100z_20260829.pt",
+    "scale": [
+      0.15,
+      0.15,
+      0.35
+    ]
+  }
+}

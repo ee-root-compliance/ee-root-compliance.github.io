@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/ceer2-favicon.svg" type="image/svg+xml">
   <script defer src="./static/js/index.js"></script>
+  <script defer src="./static/js/experiments.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,10 +41,10 @@
               <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h3M9 11h6M9 15h6M9 19h4"/></svg></span>
               <span>arXiv</span>
             </a>
-            <a id="video-link" href="#video" class="button is-normal is-rounded is-dark resource-button" aria-disabled="true">
+            <a id="video-link" href="#video" class="button is-normal is-rounded is-dark resource-button">
               <span class="icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 4v16l12-8Z"/></svg></span><span>Video</span>
             </a>
-            <a id="live-demo-link" href="#" class="button is-normal is-rounded is-dark resource-button" aria-disabled="true">
+            <a id="live-demo-link" href="#live-demo" class="button is-normal is-rounded is-dark resource-button">
               <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 8 5 4-5 4z"/></svg></span>
               <span>Live Demo</span>
             </a>
@@ -70,27 +71,315 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <h2 id="abstract-title" class="title is-3 has-text-centered">Abstract</h2>
-            <div class="content has-text-justified">
+            <div class="content abstract-copy">
               <p>General humanoid motion-tracking policies reproduce diverse behaviors but do not specify responses to physical interaction. Existing compliance methods mainly target selected links or end effectors, without jointly controlling axis-wise stiffness and locomotion behavior. We formulate directional and tunable end-effector (EE) compliance together with root resistance and damping modes. Our two-level hierarchical RL controller combines a stiff low-level whole-body tracking policy with high-level residual policies that modify its shared EE–root command interface. An analytical compliance-space mixture-of-experts (MoE) composes 10 experts, enabling independent, continuous stiffness commands along each Cartesian axis over 100–600 N/m. A root-mode command selects one root resistance policy or one of two root damping policies. Using privileged forces, a teacher–student pipeline jointly trains the high-level policies and a force estimator, enabling deployment without wrist force/torque sensors. Simulation evaluations show accurate full-range directional EE compliance, workspace consistency, and distinct root modes. Real-world tasks further demonstrate directional EE compliance, online adjustment of EE stiffness, and concurrent EE–root compliance through the shared interface.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="video" class="section" aria-labelledby="video-title" hidden>
+    <section id="video" class="section" aria-labelledby="video-title">
       <div class="container is-max-desktop">
-        <h2 id="video-title" class="title is-3 has-text-centered">Video</h2>
-        <div id="video-player" class="publication-video"></div>
-        <p class="video-fallback has-text-centered"><a id="video-external" target="_blank" rel="noopener noreferrer">Watch on Google Drive</a></p>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 id="video-title" class="title is-3 has-text-centered">Video</h2>
+            <div id="video-player" class="publication-video">
+              <video controls playsinline preload="none" tabindex="0" poster="./static/images/ceer2-video-cover.jpg" aria-label="Project video: Directional and Tunable End-Effector and Root Compliance">
+                <source src="./static/videos/ceer2-project.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="./static/videos/ceer2-project.mp4">Download the video</a>.
+              </video>
+              <button class="video-cover" type="button" aria-label="Play video" hidden>
+                <img src="./static/images/ceer2-video-cover.jpg" alt="" width="1920" height="1080">
+                <span class="video-cover-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4v16l12-8Z"/></svg></span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="section" aria-labelledby="framework-title">
+    <section id="framework" class="section framework-section" aria-labelledby="framework-title">
       <div class="container is-max-desktop">
         <h2 id="framework-title" class="title is-3 has-text-centered">System Framework</h2>
         <figure>
           <img class="paper-figure" src="./static/images/ceer2-framework.png" width="1483" height="702" loading="lazy" alt="Two-stage hierarchical RL framework: a stiff low-level tracking policy, high-level compliance residual policies, an analytical mixture-of-experts gate for end-effector stiffness, and a root-mode switch.">
-          <figcaption class="content framework-caption">A stiff low-level whole-body tracking policy provides a shared EE–root command interface. High-level residual policies learn responses to external forces. At deployment, an analytical compliance-space gate composes 10 EE compliance experts according to the commanded Cartesian stiffness, while a mode switch selects a root resistance or damping policy. The low-level policy remains active throughout.</figcaption>
+          <figcaption class="content framework-caption">A shared EE–root interface combines a low-level tracking policy with high-level compliance policies. An analytical mixture of 10 experts controls axis-wise EE stiffness, while a mode switch selects root resistance or damping.</figcaption>
         </figure>
+      </div>
+    </section>
+    <section id="live-demo" class="section live-demo-section" aria-labelledby="live-demo-title">
+      <div class="container is-max-desktop">
+        <h2 id="live-demo-title" class="title is-3 has-text-centered">Live Demo</h2>
+        <iframe id="compliance-demo" class="live-demo-frame" src="./live-demo/" title="CEER2 interactive compliance simulation" loading="lazy" allow="fullscreen"></iframe>
+      </div>
+    </section>
+    <section id="real-world" class="section real-world-section" aria-labelledby="real-world-title">
+      <div class="container is-max-desktop">
+        <h2 id="real-world-title" class="title is-3 has-text-centered">Real-world Experiments</h2>
+        <article class="experiment-group" id="tunable-stiffness" aria-labelledby="tunable-stiffness-title">
+          <h3 id="tunable-stiffness-title" class="title is-4">Battery Pulling</h3>
+          <div class="video-comparison">
+            <div class="experiment-grid three-up" tabindex="0" role="group" aria-label="Comparison videos">
+              <figure class="experiment-card">
+                <figcaption>Kz = 600 N/m</figcaption>
+                <video width="628" height="900" controls muted playsinline preload="none" poster="./static/images/experiments/battery-600.jpg" aria-label="Kz = 600 N/m">
+                  <source src="./static/videos/experiments/battery-600.mp4" type="video/mp4">
+                </video>
+              </figure>
+              <figure class="experiment-card">
+                <figcaption>Kz = 200 N/m</figcaption>
+                <video width="628" height="900" controls muted playsinline preload="none" poster="./static/images/experiments/battery-200.jpg" aria-label="Kz = 200 N/m">
+                  <source src="./static/videos/experiments/battery-200.mp4" type="video/mp4">
+                </video>
+              </figure>
+              <figure class="experiment-card">
+                <figcaption>Kz = 100 N/m</figcaption>
+                <video width="628" height="900" controls muted playsinline preload="none" poster="./static/images/experiments/battery-100.jpg" aria-label="Kz = 100 N/m">
+                  <source src="./static/videos/experiments/battery-100.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+          </div>
+
+        </article>
+        <article class="experiment-group" id="directional-writing" aria-labelledby="directional-writing-title">
+          <h3 id="directional-writing-title" class="title is-4">Figure-eight Writing</h3>
+          <div class="video-comparison">
+            <div class="experiment-grid three-up" tabindex="0" role="group" aria-label="Comparison videos">
+              <figure class="experiment-card">
+                <figcaption>Soft</figcaption>
+                <video width="616" height="810" controls muted playsinline preload="none" poster="./static/images/experiments/writing-soft.jpg" aria-label="Soft">
+                  <source src="./static/videos/experiments/writing-soft.mp4" type="video/mp4">
+                </video>
+              </figure>
+              <figure class="experiment-card">
+                <figcaption>Stiff</figcaption>
+                <video width="616" height="810" controls muted playsinline preload="none" poster="./static/images/experiments/writing-stiff.jpg" aria-label="Stiff">
+                  <source src="./static/videos/experiments/writing-stiff.mp4" type="video/mp4">
+                </video>
+              </figure>
+              <figure class="experiment-card">
+                <figcaption>Directional (ours)</figcaption>
+                <video width="616" height="810" controls muted playsinline preload="none" poster="./static/images/experiments/writing-directional.jpg" aria-label="Directional (ours)">
+                  <source src="./static/videos/experiments/writing-directional.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+          </div>
+        </article>
+        <article class="experiment-group" id="ee-root-carrying" aria-labelledby="ee-root-carrying-title">
+          <h3 id="ee-root-carrying-title" class="title is-4">Collaborative Box Carrying</h3>
+          <div class="video-comparison">
+            <div class="experiment-grid two-up" tabindex="0" role="group" aria-label="Comparison videos">
+              <figure class="experiment-card">
+                <figcaption>Without added payload</figcaption>
+                <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/experiments/carrying.jpg?v=exposure2" aria-label="Box carrying">
+                  <source src="./static/videos/experiments/carrying.mp4?v=exposure2" type="video/mp4">
+                </video>
+              </figure>
+              <figure class="experiment-card">
+                <figcaption>With added payload</figcaption>
+                <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/experiments/carrying-payload.jpg?v=exposure2" aria-label="Carrying with added payload">
+                  <source src="./static/videos/experiments/carrying-payload.mp4?v=exposure2" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </section>
+    <section id="simulation" class="section simulation-section" aria-labelledby="simulation-title">
+      <div class="container is-max-desktop">
+        <h2 id="simulation-title" class="title is-3 has-text-centered">Simulation Experiments</h2>
+        <article class="experiment-group" aria-labelledby="sim-table-wiping-title">
+          <h3 id="sim-table-wiping-title" class="title is-4">Table Wiping</h3>
+          <div class="experiment-grid two-up">
+            <figure class="experiment-card">
+              <figcaption>Stiff</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/table-wiping-full-stiff.jpg" aria-label="Table Wiping: Stiff">
+                <source src="./static/videos/simulation/separate/table-wiping-full-stiff.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="experiment-card">
+              <figcaption>Directional (ours)</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/table-wiping-full-directional.jpg" aria-label="Table Wiping: Directional (ours)">
+                <source src="./static/videos/simulation/separate/table-wiping-full-directional.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        </article>
+        <article class="experiment-group" aria-labelledby="sim-peg-insertion-title">
+          <h3 id="sim-peg-insertion-title" class="title is-4">Peg Insertion</h3>
+          <div class="experiment-grid two-up">
+            <figure class="experiment-card">
+              <figcaption>Stiff</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/peg-insertion-full-stiff.jpg" aria-label="Peg Insertion: Stiff">
+                <source src="./static/videos/simulation/separate/peg-insertion-full-stiff.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="experiment-card">
+              <figcaption>Directional (ours)</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/peg-insertion-full-directional.jpg" aria-label="Peg Insertion: Directional (ours)">
+                <source src="./static/videos/simulation/separate/peg-insertion-full-directional.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        </article>
+        <article class="experiment-group" aria-labelledby="sim-figure-eight-writing-title">
+          <h3 id="sim-figure-eight-writing-title" class="title is-4">Figure-eight Writing</h3>
+          <div class="experiment-grid two-up">
+            <figure class="experiment-card">
+              <figcaption>Stiff</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/figure-eight-writing-stiff.jpg" aria-label="Figure-eight Writing: Stiff">
+                <source src="./static/videos/simulation/separate/figure-eight-writing-stiff.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="experiment-card">
+              <figcaption>Directional (ours)</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/figure-eight-writing-directional.jpg" aria-label="Figure-eight Writing: Directional (ours)">
+                <source src="./static/videos/simulation/separate/figure-eight-writing-directional.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        </article>
+        <article class="experiment-group" aria-labelledby="sim-box-lifting-title">
+          <h3 id="sim-box-lifting-title" class="title is-4">Box Lifting</h3>
+          <div class="experiment-grid two-up">
+            <figure class="experiment-card">
+              <figcaption>Stiff</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/box-lifting-stiff.jpg" aria-label="Box Lifting: Stiff">
+                <source src="./static/videos/simulation/separate/box-lifting-stiff.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="experiment-card">
+              <figcaption>Directional (ours)</figcaption>
+              <video width="960" height="540" controls muted playsinline preload="none" poster="./static/images/simulation/separate/box-lifting-directional.jpg" aria-label="Box Lifting: Directional (ours)">
+                <source src="./static/videos/simulation/separate/box-lifting-directional.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        </article>
+        <article class="experiment-group" aria-labelledby="sim-collaborative-carrying-pair-title">
+          <h3 id="sim-collaborative-carrying-pair-title" class="title is-4">Collaborative Carrying</h3>
+          <div class="experiment-grid two-up">
+            <figure class="experiment-card">
+              <figcaption>Soft</figcaption>
+              <video width="960" height="400" controls muted playsinline preload="none" poster="./static/images/simulation/separate/collaborative-carrying-pair-soft.jpg" aria-label="Collaborative Carrying: Soft">
+                <source src="./static/videos/simulation/separate/collaborative-carrying-pair-soft.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="experiment-card">
+              <figcaption>Directional (ours)</figcaption>
+              <video width="960" height="400" controls muted playsinline preload="none" poster="./static/images/simulation/separate/collaborative-carrying-pair-directional.jpg" aria-label="Collaborative Carrying: Directional (ours)">
+                <source src="./static/videos/simulation/separate/collaborative-carrying-pair-directional.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="results" class="section results-section" aria-labelledby="results-title">
+      <div class="container is-max-desktop">
+        <h2 id="results-title" class="title is-3 has-text-centered">Experimental Results</h2>
+        <div class="results-intro has-text-centered">
+          <h3 class="title is-4">Full-Range Directional EE Compliance</h3>
+          <p>Independent stiffness control across the Cartesian axes, evaluated over <strong>16 stiffness configurations</strong> spanning <strong>100–600 N/m</strong>, with <strong>960 trials per method</strong>.</p>
+        </div>
+        <p class="results-scroll-hint">Swipe the table to view all metrics →</p>
+        <div class="results-table-wrap" role="region" aria-label="Full-range compliance results table; scroll horizontally on smaller screens" tabindex="0">
+          <table class="results-table" aria-describedby="results-table-note">
+            <caption>Full-range compliance accuracy and command–response trends</caption>
+            <colgroup><col></colgroup>
+            <colgroup span="3"></colgroup>
+            <colgroup span="2"></colgroup>
+            <thead>
+              <tr class="metric-groups">
+                <th rowspan="2" scope="col">Method</th>
+                <th colspan="3" scope="colgroup">Accuracy <span>↓ lower is better</span></th>
+                <th colspan="2" scope="colgroup">Trend</th>
+              </tr>
+              <tr>
+                <th scope="col">Compliance matrix<br>error ↓</th>
+                <th scope="col">EE compliance<br>error (m) ↓</th>
+                <th scope="col">Stiffness<br>MAPE ↓</th>
+                <th scope="col">Slope<br><span class="metric-hint">ideal: 1</span></th>
+                <th scope="col">R<sup>2</sup> ↑<br><span class="metric-hint">ideal: 1</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Stiff.-cond. HL</th>
+                <td>0.677</td><td>0.0566</td><td>1.325</td><td>0.136</td><td>0.040</td>
+              </tr>
+              <tr>
+                <th scope="row">Stiff.-cond. E2E</th>
+                <td>1.064</td><td>0.0884</td><td>5.208</td><td>3.430</td><td>0.003</td>
+              </tr>
+              <tr>
+                <th scope="row">Oracle-force LL</th>
+                <td>0.304</td><td>0.0459</td><td>0.256</td><td>0.485</td><td><strong>0.792</strong></td>
+              </tr>
+              <tr class="our-method">
+                <th scope="row">Analytical MoE <span class="ours-label">Ours</span></th>
+                <td><strong>0.278</strong></td><td><strong>0.0349</strong></td><td><strong>0.249</strong></td><td><strong>0.764</strong></td><td>0.779</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="results-table-note" class="results-note"><strong>Bold</strong> marks the best value in each column; slope is ranked by proximity to 1. MAPE is reported as a ratio, as in the paper (0.249 = 24.9%). Values from Table IV. <a href="./static/papers/CEER2.pdf#page=6">Evaluation details ↗</a></p>
+        <p class="results-takeaway">Analytical MoE has the lowest errors and the slope closest to 1; Oracle-force LL has the highest R<sup>2</sup>.</p>
+        <figure class="stiffness-figure">
+          <h3 class="title is-4 has-text-centered">Commanded vs. Apparent Stiffness</h3>
+          <img class="paper-figure" src="./static/images/ceer2-stiffness-response.png" width="2204" height="1001" loading="lazy" alt="Figure 4: measured apparent stiffness versus commanded stiffness on the x, y, and z axes for Analytical MoE, stiffness-conditioned HL, stiffness-conditioned E2E, and Oracle-force LL. The dashed diagonal indicates ideal tracking.">
+          <figcaption>Median response with interquartile bands; dashed lines show ideal tracking. The broad E2E band is omitted in the x-axis panel for readability. <a href="./static/papers/CEER2.pdf#page=7">Figure 4 ↗</a></figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- Original Our Team section retained for restoration.
+    To restore: replace the anonymous #team section below with this section,
+    restore its styles, and copy ../private-team-backup/portraits/ to static/images/team/.
+    <section id="team" class="section team-section" aria-labelledby="team-title">
+      <div class="container is-max-desktop">
+        <h2 id="team-title" class="title is-3 has-text-centered">Our Team</h2>
+        <div class="team-grid">
+          <article class="team-member">
+            <a class="team-profile" href="https://luoxinyuan.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Xinyuan Luo — personal website">
+              <span class="team-portrait"><img src="./static/images/team/xinyuan-luo.png" alt="Xinyuan Luo" width="180" height="180" loading="lazy"></span>
+              <h3 class="team-name">Xinyuan Luo</h3>
+            </a>
+            <p class="team-affiliation">Duke University</p>
+          </article>
+          <article class="team-member">
+            <a class="team-profile" href="https://www.linkedin.com/in/stevenryanrobot" target="_blank" rel="noopener noreferrer" aria-label="Chunyuan Yang — LinkedIn">
+              <span class="team-portrait team-portrait-chunyuan"><img src="./static/images/team/chunyuan-yang.png" alt="Chunyuan Yang" width="180" height="180" loading="lazy"></span>
+              <h3 class="team-name">Chunyuan Yang</h3>
+            </a>
+            <p class="team-affiliation">Duke University</p>
+          </article>
+          <article class="team-member">
+            <a class="team-profile" href="https://generalroboticslab.com/director" target="_blank" rel="noopener noreferrer" aria-label="Boyuan Chen — personal website">
+              <span class="team-portrait"><img src="./static/images/team/boyuan-chen.jpg" alt="Boyuan Chen" width="180" height="180" loading="lazy"></span>
+              <h3 class="team-name">Boyuan Chen</h3>
+            </a>
+            <p class="team-affiliation">Duke University</p>
+          </article>
+          <article class="team-member">
+            <a class="team-profile" href="https://xianyicheng.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Xianyi Cheng — personal website">
+              <span class="team-portrait"><img src="./static/images/team/xianyi-cheng.jpg" alt="Xianyi Cheng" width="180" height="180" loading="lazy"></span>
+              <h3 class="team-name">Xianyi Cheng</h3>
+            </a>
+            <p class="team-affiliation">Duke University</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    -->
+    <section id="team" class="section team-section" aria-labelledby="team-title">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 id="team-title" class="title is-3">Our Team</h2>
+        <div class="anonymous-team">
+          <p>Anonymous during review.</p>
+        </div>
       </div>
     </section>
   </main>

@@ -1,0 +1,65 @@
+{
+  "source": "video-source/CEER2V5.mov",
+  "raw_source_archive": "https://drive.google.com/file/d/1b3fqOGcuzUMiMSej6nmvXhB_vYS9eEFL/view",
+  "raw_condition_mapping": "Verified against CEER2/draft_info.json: S-STIFF upper (Stiff), S-SOFT lower (Directional) for wiping and insertion.",
+  "raw_playback": "Full clips from frame zero at 1x; shorter clip holds its actual final frame while the other completes.",
+  "drive_url": "https://drive.google.com/file/d/1d6K0uwXqjZw3rJKMp1ge1Wb982GvpUQS/view",
+  "notes": "Each task is cropped into a synchronized horizontal pair, baseline left and directional right. Original timing, playback-speed labels and outcomes retained; condition labels are in HTML. No exposure adjustment.",
+  "clips": [
+    {
+      "name": "table-wiping-full",
+      "title": "Table Wiping",
+      "start": 0,
+      "duration": 16.36,
+      "baseline": "Stiff",
+      "raw_pair": [
+        "v2fill_table_wipe__S-STIFF_verystiff.mp4",
+        "v2fill_table_wipe__S-SOFT_my_custom.mp4"
+      ]
+    },
+    {
+      "name": "peg-insertion-full",
+      "title": "Peg Insertion",
+      "start": 0,
+      "duration": 23.84,
+      "baseline": "Stiff",
+      "raw_pair": [
+        "v2fill_peg_in_hole__S-STIFF_verystiff.mp4",
+        "v2fill_peg_in_hole__S-SOFT_my_custom.mp4"
+      ]
+    },
+    {
+      "name": "figure-eight-writing",
+      "title": "Figure-eight Writing",
+      "start": 35,
+      "duration": 9.5,
+      "baseline": "Stiff",
+      "crops": [
+        "836:470:230:36",
+        "836:470:230:510"
+      ]
+    },
+    {
+      "name": "box-lifting",
+      "title": "Box Lifting",
+      "start": 35,
+      "duration": 9.5,
+      "baseline": "Stiff",
+      "crops": [
+        "836:470:1070:36",
+        "836:470:1070:510"
+      ]
+    },
+    {
+      "name": "collaborative-carrying-pair",
+      "title": "Collaborative Carrying",
+      "start": 44.5,
+      "duration": 12,
+      "baseline": "Soft",
+      "crops": [
+        "1176:490:452:20",
+        "1176:490:452:516"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ceer2-live-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:demo": "node scripts/build-demo.mjs"
+  },
+  "dependencies": {
+    "@mujoco/mujoco": "3.14.0",
+    "onnxruntime-web": "1.30.0",
+    "three": "0.186.1"
+  }
+}

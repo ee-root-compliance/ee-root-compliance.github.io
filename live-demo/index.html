@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CEER2 · Interactive compliance</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<main class="demo">
+ <div class="scene-wrap">
+  <div id="scene" aria-label="Three-dimensional G1 robot preview. Drag to rotate the camera; scroll to zoom." tabindex="0"></div>
+  <div id="load-status" class="load-status" role="status">Loading G1 model…</div>
+  <div class="view-tools"><button id="reset-view" type="button">Reset view</button><button id="fullscreen" type="button">Full screen</button></div>
+  <div class="scene-footer"><span><i class="dot"></i> <span id="sim-status">Ready to start</span></span></div>
+ </div>
+ <aside class="panel" aria-label="Compliance controls">
+  <div class="panel-heading"><h2>Compliance</h2><button id="toggle-panel" type="button" aria-label="Collapse controls" aria-expanded="true" aria-controls="panel-body">−</button></div>
+  <div id="panel-body">
+  <button id="start-simulation" type="button">Start simulation</button>
+  <fieldset><legend>Presets</legend><div class="presets">
+   <button data-preset="x" type="button" aria-pressed="true">Soft X</button><button data-preset="y" type="button" aria-pressed="false">Soft Y</button><button data-preset="z" type="button" aria-pressed="false">Soft Z</button><button data-preset="all" type="button" aria-pressed="false">All axes</button>
+  </div></fieldset>
+  <fieldset class="stiffness"><legend>Stiffness <span>N/m</span></legend>
+   <div class="axis-row"><label for="kx" title="Forward / backward"><b class="x">X</b></label><output for="kx" id="vx">100</output><input id="kx" type="range" min="100" max="600" step="10" value="100"></div>
+   <div class="axis-row"><label for="ky" title="Left / right"><b class="y">Y</b></label><output for="ky" id="vy">600</output><input id="ky" type="range" min="100" max="600" step="10" value="600"></div>
+   <div class="axis-row"><label for="kz" title="Up / down"><b class="z">Z</b></label><output for="kz" id="vz">600</output><input id="kz" type="range" min="100" max="600" step="10" value="600"></div>
+   <div class="range-legend"><span>100 · Softer</span><span>600 · Stiffer</span></div>
+  </fieldset>
+  <div class="anchor-heading">All axes</div><div class="anchors"><button data-anchor="100">100</button><button data-anchor="200">200</button><button data-anchor="400">400</button><button data-anchor="600">600</button></div>
+  <div class="pull-controls"><label for="pull-direction">Pull direction</label><select id="pull-direction"><option value="free">Free drag</option><option value="x" selected>X · Forward / backward</option><option value="y">Y · Left / right</option><option value="z">Z · Up / down</option></select><div class="probes"><button data-probe="-10" title="Hold to pull the left hand; Free mode uses X" disabled>Hold −10 N</button><button data-probe="10" title="Hold to pull the left hand; Free mode uses X" disabled>Hold +10 N</button></div></div>
+  <div class="awaiting" role="note" hidden></div>
+
+  <div class="measurements"><div><span>Force</span><strong><span id="force-value">0.0</span> <small>N</small></strong></div><div><span>Displacement</span><strong title="World displacement since the start of this pull"><span id="displacement-value">0.0</span> <small>cm</small></strong></div></div>
+  <div class="simulation-actions"><button id="pause-simulation" disabled>Pause</button><button id="reset-simulation" disabled>Reset robot</button><button id="reset-settings" type="button">Reset settings</button></div>
+  </div>
+ </aside>
+</main>
+</body></html>
